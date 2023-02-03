@@ -40,7 +40,7 @@ _You can also read this in [English](readme.md) and [Português do Brasil](readm
   Default folder for IPython notebooks. There can be found a example notebook named _example.ipynb_.
 
 ### app.config.yaml
-  File containing app general configurations like default folder locations or database conection parameters.
+  File containing app general configurations like default folder locations or database connection parameters.
 
 ### logging.config.yaml
   File containing log formating configurations.
