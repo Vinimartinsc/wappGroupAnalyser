@@ -1,0 +1,11 @@
+.db/*
+.idea
+.logs
+__pycache__
+*venv
+
+notebooks/*
+!notebooks/example.ipynb
+
+.datasets/*
+!.datasets/example.txt
