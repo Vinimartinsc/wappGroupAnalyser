@@ -1,6 +1,6 @@
 version: 1
 
-dataset_path: '.datasets/Conversa do WhatsApp com Barão Jovem.txt'
+dataset_path: '.datasets/example.txt'
 logs_path: '.logs'
 
 database_path: '.db/wpp2_messages.db'
