@@ -16,8 +16,10 @@ from .Constants import *
 
 def is_valid(message_raw: str) -> Union[str, None]:
     '''Verify if given string is a valid whatsapp message. A message is valid if it contains datetime data at the start of the message'''
-    datetime_content = re.match(
-        r'\d{2}/\d{2}/\d{2} \d{2}:\d{2} -.*', message_raw)
+    
+    regular_exp = re.compile(r'\d{2}/\d{2}/\d{4} \d{2}:\d{2} -.*')
+
+    datetime_content = re.match(regular_exp, message_raw)
     return datetime_content.group(0) if datetime_content else None
 
 
@@ -42,13 +44,13 @@ class WppMessage:
         if datetime_content:
             datetime_content = datetime_content.split('-')[0]
 
-            if len(datetime_content) == 15:  # size of a datetime string dd/mm/yy hh:MM
+            if len(datetime_content) == 17:  # size of a datetime string dd/mm/yyyy hh:MM
                 # remove '-' and spaces in message string
                 sanitized_content = datetime_content.strip()
 
                 # create datetime class with given value
                 datetime_content = datetime.strptime(
-                    sanitized_content, "%d/%m/%y %H:%M")
+                    sanitized_content, "%d/%m/%Y %H:%M")
 
                 # store in message DTO
                 self.__message.set_datetime(datetime_content)
