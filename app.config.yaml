@@ -1,9 +1,8 @@
 version: 1
 
-dataset_path: '.datasets/example.txt'
-logs_path: '.logs'
-
 database_path: '.db/wpp2_messages.db'
 driver: 'sqlite:///'
 table_name: 'messages'
 chunk_size: 10000
+
+logs_path: '.logs'
